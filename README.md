@@ -1,4 +1,4 @@
-Github: 
+
 ---
 
 **Advanced Lane Finding Project**
@@ -67,8 +67,7 @@ plt.imshow(img)
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
 
-![Calibrate Camera & Undistort ](http://upload-images.jianshu.io/upload_images/2528310-07ff348436dad22f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
-
+![Calibrate Camera & Undistort](http://upload-images.jianshu.io/upload_images/2528310-5e2941a1dead8b1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 The codes are as follows:
 ```python
 images = glob.glob('camera_cal/calibration*.jpg')
