@@ -145,7 +145,7 @@ Then, I use the cv2.getPerspectiveTransform(source, destination) to generate the
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 
-![Perspective transform](http://upload-images.jianshu.io/upload_images/2528310-601ad2c2e23bc018.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+![Perspective transform](http://upload-images.jianshu.io/upload_images/2528310-601ad2c2e23bc018.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
 
 
 
@@ -158,8 +158,8 @@ How to identify the lane line correctly in the above image? We first draw the hi
 histogram = np.sum(dst[int(img.shape[0]/2):,:], axis=0)
 plt.plot(histogram)
 ```
-![Histogram of the lane line](http://upload-images.jianshu.io/upload_images/2528310-9ade7ee11543098b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
-![Fit 2nd order curve](http://upload-images.jianshu.io/upload_images/2528310-93077b33a80e8c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+![Histogram of the lane line](http://upload-images.jianshu.io/upload_images/2528310-9ade7ee11543098b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
+![Fit 2nd order curve](http://upload-images.jianshu.io/upload_images/2528310-93077b33a80e8c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
 
 
 In addition, we use a Queue (size = 10) to smooth the curves that we detect. In some cases, the camera may not detect lane lines. With a queue, the car may keep on the track according to the information in previous frames.
