@@ -68,6 +68,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 
 ![Calibrate Camera & Undistort](http://upload-images.jianshu.io/upload_images/2528310-5e2941a1dead8b1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
+
 The codes are as follows:
 ```python
 images = glob.glob('camera_cal/calibration*.jpg')
@@ -88,7 +89,7 @@ plt.imshow(dst)
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![distortion-corrected image](http://upload-images.jianshu.io/upload_images/2528310-f2acbe8a31d95998.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
+![distortion-corrected image](http://upload-images.jianshu.io/upload_images/2528310-f2acbe8a31d95998.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 
 The codes are as follows:
 ```
@@ -113,7 +114,7 @@ b. gradient sobel operator for x and y dimension
 c. use the specific channels in HLS, HSV, Lab format to remove noises (such as shaddow) and detect white and yellow lane lines
 d. Combine all the above results together and generate the binary image
 
-![A binary image](http://upload-images.jianshu.io/upload_images/2528310-24508277b2fdd892.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
+![A binary image](http://upload-images.jianshu.io/upload_images/2528310-24508277b2fdd892.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -144,7 +145,7 @@ Then, I use the cv2.getPerspectiveTransform(source, destination) to generate the
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 
-![Perspective transform](http://upload-images.jianshu.io/upload_images/2528310-601ad2c2e23bc018.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
+![Perspective transform](http://upload-images.jianshu.io/upload_images/2528310-601ad2c2e23bc018.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
 
 
 
@@ -157,8 +158,8 @@ How to identify the lane line correctly in the above image? We first draw the hi
 histogram = np.sum(dst[int(img.shape[0]/2):,:], axis=0)
 plt.plot(histogram)
 ```
-![Histogram of the lane line](http://upload-images.jianshu.io/upload_images/2528310-9ade7ee11543098b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
-![Fit 2nd order curve](http://upload-images.jianshu.io/upload_images/2528310-93077b33a80e8c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/860)
+![Histogram of the lane line](http://upload-images.jianshu.io/upload_images/2528310-9ade7ee11543098b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
+![Fit 2nd order curve](http://upload-images.jianshu.io/upload_images/2528310-93077b33a80e8c2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480)
 
 
 In addition, we use a Queue (size = 10) to smooth the curves that we detect. In some cases, the camera may not detect lane lines. With a queue, the car may keep on the track according to the information in previous frames.
@@ -209,13 +210,13 @@ offset = xm_per_pix*offset
 return offset
 ```
 
-![Test image on the road](http://upload-images.jianshu.io/upload_images/2528310-e8fc6f466322d28c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Test image on the road](http://upload-images.jianshu.io/upload_images/2528310-e8fc6f466322d28c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in `Cell  636` in my code in `Advanced Lane Line Detection.ipynb`.  Here is an example of my result on a test image:
 
 
-![Lane Line detection](http://upload-images.jianshu.io/upload_images/2528310-b31e2ebf02bf512f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Lane Line detection](http://upload-images.jianshu.io/upload_images/2528310-b31e2ebf02bf512f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/720)
 ```
 from moviepy.editor import VideoFileClip
 from IPython.display import HTML
