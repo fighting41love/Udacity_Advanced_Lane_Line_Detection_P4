@@ -281,7 +281,8 @@ process_frame(image)
 ### Pipeline (video)
 
 #### 1. Provide a link to your final video output.  
-Here's a [https://www.youtube.com/watch?v=ivDAtCu-XzY](project_result.mp4)
+Here's a [video](https://youtu.be/QzMzDmW57jU)
+There is also a project_output.mp4 in the [github](https://github.com/fighting41love/Udacity_Advanced_Lane_Line_Detection_P4/blob/master/project_output.mp4).
 
 ---
 
